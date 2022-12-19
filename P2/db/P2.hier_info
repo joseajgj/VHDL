@@ -1,0 +1,17 @@
+|P2
+Ta => Mux0.IN8
+Ta => Mux1.IN8
+Ra => Mux0.IN9
+Ra => Mux1.IN9
+Pa => Mux0.IN10
+Pa => Mux1.IN10
+Tb => Mux2.IN8
+Tb => Mux3.IN8
+Rb => Mux2.IN9
+Rb => Mux3.IN9
+Pb => Mux2.IN10
+Pb => Mux3.IN10
+g1 <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+g2 <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+
+

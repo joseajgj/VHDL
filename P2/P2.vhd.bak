@@ -1,0 +1,50 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity P2 is
+	port(
+		Ta,Ra,Pa,Tb,Rb,Pb: IN std_logic ;
+		g1,g2 : OUT Std_logic););
+end P2;
+
+architecture piedra_papel_tijera of P2 is
+Signal entrada1: std_logic_vector ( 2 downto 0);
+Signal s1: std_logic_vector (1 downto 0);
+Signal entrada2: std_logic_vector ( 2 downto 0);
+Signal s2: std_logic_vector (1 downto 0);
+Signal input: std_logic_vector ( 3 downto 0);	
+begin
+	entrada1 <= Ta&Ra&Pa;
+PROCESO_1: PROCESS (entrada1)
+begin
+case entrada1 is
+	 WHEN "000"|"011"|"101"|"110"|"111" => s1<="00";
+	 When "001" =>s1<="01";
+	 When "010" => s1<="10";
+	 WHEN OTHERS => s1<="11";
+	END case;
+END PROCESS;
+ 
+	entrada2 <= Tb&Rb&Pb;
+PROCESO_2: PROCESS (entrada2)
+begin
+case entrada2 is
+	 WHEN "000"|"011"|"101"|"110"|"111" => s2<="00";
+	 When "001" =>s2<="01";
+	 When "010" => s2<="10";
+	 WHEN OTHERS => s2<="11";
+	END case;
+END PROCESS;
+ 
+ input <= s1&s2;
+ 
+PROCESO_3: PROCESS (input)
+ begin
+ case input is
+	 WHEN "0000" => g1 <= '0' ; g2 <= '0';
+	 WHEN "0101"|"1010"|"1111" => g1 <= '1' ; g2<= '1';
+	 WHEN "0001"|"0010"|"0011"|"0111"|"1001"|"1110" => g1 <= '0' ; g2<= '1';
+	 WHEN OTHERS => g1 <= '1' ; g2<= '0';
+	END case;
+END PROCESS;
+end piedra_papel_tijera;

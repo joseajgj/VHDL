@@ -1,0 +1,8 @@
+
+State Machine - |p|estado
+Name estado.state_bit_2 estado.state_bit_1 estado.state_bit_0 
+estado.reposo 0 0 0 
+estado.clear 0 0 1 
+estado.green 0 1 1 
+estado.orange 0 1 0 
+estado.red 1 1 0 

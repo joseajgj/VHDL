@@ -1,0 +1,22 @@
+|p
+pulsador => Q0.DATAIN
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => Q1.CLK
+clk => Q0.CLK
+clk => estado~0.IN1
+reset => contador[0].ACLR
+reset => contador[1].ACLR
+reset => contador[2].ACLR
+reset => Q1.ACLR
+reset => Q0.ACLR
+reset => estado~1.IN1
+verde <= verde~1.DB_MAX_OUTPUT_PORT_TYPE
+ambar <= ambar~0.DB_MAX_OUTPUT_PORT_TYPE
+rojo <= rojo~0.DB_MAX_OUTPUT_PORT_TYPE
+cuenta[0] <= contador[0].DB_MAX_OUTPUT_PORT_TYPE
+cuenta[1] <= contador[1].DB_MAX_OUTPUT_PORT_TYPE
+cuenta[2] <= contador[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
